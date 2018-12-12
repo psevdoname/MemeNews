@@ -7,13 +7,13 @@ from newspaper import Article
 import praw
 import json
 import matplotlib.pyplot as plt
-<<<<<<< HEAD
+
 from sklearn.metrics.pairwise import euclidean_distances
-with open('config.json') as f:
-=======
+#with open('config.json') as f:
+
 with open('config_example.json') as f:
->>>>>>> 9b5b5cab388a93752f3849f3a1942667c807a9ad
     data = json.load(f)
+
 reddit_cred = data['Reddit']
 watson_cred = data['Watson']
 newspaper_cred = data['News']
@@ -58,7 +58,7 @@ nmf = NMF(n_components=no_topics, random_state=1, alpha=.1, l1_ratio=.5, init='n
 lda = LatentDirichletAllocation(no_topics, max_iter=5, learning_method='online', learning_offset=50.,random_state=0).fit(tf)
 x_lda = lda.transform(tf)
 
-=======
+
 
 x_lda = lda.transform(tf)
 
@@ -66,7 +66,6 @@ x_lda = lda.transform(tf)
 
 from sklearn.metrics.pairwise import euclidean_distances
  
->>>>>>> 9b5b5cab388a93752f3849f3a1942667c807a9ad
 def most_similar(x, Z, top_n=5):
     dists = euclidean_distances(x.reshape(1, -1), Z)
     pairs = enumerate(dists[0])
