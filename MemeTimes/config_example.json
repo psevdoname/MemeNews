@@ -1,0 +1,26 @@
+{
+	"_comment": "This is an example config, in your own respository rename this file to config.json and fill-in below. To find your Reddit credentials, login to Reddit and register yourself as a script developer. Follow this tutorial: https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example. You can delete this comment object from the config json afterwards.",
+	"Reddit": {
+		"client_id": "your-client-id",
+		"client_secret": "your-client-secret",
+		"user_agent": "script/app name by your-username",
+		"username": "your-username",
+		"password": "your-password"
+	},
+	"Watson": {
+		"username": "your-api-key",
+		"password": "your-password"
+	},
+	"News": {
+		"api-key": "your-api-key"
+	},
+	"SQL": {
+		"host" : "35.237.95.123",
+		"user" : "root",
+		"password": "yankees7&"
+	},
+	"img" : {
+		"username": "your-username",
+		"password": "your-password"
+	}
+}

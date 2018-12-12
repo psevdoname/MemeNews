@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>MemeTimes.com</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Alegreya|Alike|Aref+Ruqaa|Cinzel|Cinzel+Decorative|Cookie|Cormorant|El+Messiri|Forum|Gilda+Display|IM+Fell+Double+Pica|Julius+Sans+One|Norican|Noto+Serif+SC|Petit+Formal+Script|Rasa" rel="stylesheet">		<script src="{{url_for('static', filename='javascript/MemeNews.js')}}"></script>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/MemeNews_ss.css') }}" type="text/css">
+
+    </head>
+	
+	<body>
+		<div class="header">
+			<table style="height:50px; width:100%; border-bottom:1px solid grey; "> 
+				<tr class="info_today" style="background-color: white">
+					<th class="textleft textbottom" style="width: 45%">
+						{{ date }}
+					</th>
+					<th style="width: 10%">
+						<a class="logo" href="/">
+							<img src="{{ url_for('static',filename='images/logo.png') }}" alt="MemeNews Logo. Click to visit the homepage" height="50px" align="middle">
+						</a>
+					</th>
+					<th class="textright textbottom" style="width: 45%">
+						<a class="pop_up" href="Subscribe">
+							Subscribe
+						</a>
+					</th>
+				</tr>
+			</table>
+		</div>
+			
+		<div class="nav">
+			<table style="width:100%; background-color:white; border-top: 2px solid white; border-bottom: 3px double black"> 
+				<tr height='fixed'>
+					<th class="textcenter">
+						<a class="menu_bar hide sticky" href="/">
+							<img src="{{ url_for('static',filename='images/logo_simple.png') }}" height="16px">
+						</a>
+					</th>
+					<th class="textcenter"><a class="menu_bar" href="PastArticles">Past Articles</a></th>
+					<th class="textcenter"><a class="menu_bar" href="TheWorldInMemes">The World in Memes</a></th>
+					<th class="textcenter">
+						<div class="dropdown">
+							<button class="menu_bar dropbtn">Meme Analysis</button>
+							<div class="dropdown-content">
+								<a href="MemeAnalysis_Articles">
+									Articles</a>
+								<a  href="MemeAnalysis_Comments">
+									Comments</a>
+							</div>
+						</div>
+					</th>
+					<th class="textcenter"><a class="menu_bar" href="AboutUs">About Us</a></th>
+
+					<th class="textcenter"><a class="menu_bar" href="AskReddit">Ask Reddit</a></th>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="container" style="background-color: silver; margin: 20% auto auto auto; padding-top: 10px;">
+		<form class="form-inline justify-content-center" method="POST" action="/ChatReddit">
+			  <input type="text" class="form-control col-7 mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Ask reddit what it thinks about..." name="userInput">
+			  <button type="submit" class="btn btn-primary mb-2">Ask Now</button>
+	   </form>
+	   {% if userInput %}
+			<div class="alert alert-primary" role="alert" style="margin: auto 17% 1% 40%;">
+				{{ userInput }}
+			</div>
+			<div class="alert alert-success" role="alert" style="margin: auto 40% 1% 17%;">
+				{{ output }}
+			</div>
+		{% endif %}
+
+		{% if chatHistory %}
+			  <p>
+				<button class="btn btn-info" type="button" style="margin: auto 20% auto 45%;" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				  Chat History
+				</button>
+			  </p>
+			  <div class="collapse" id="collapseExample" style="margin: auto 16% auto 16%;">
+				<div class="card card-body">
+				  <table>
+					<tr>
+					<th>You</th>
+					<th>Reddit</th> 
+					</tr>
+				  {% for key, value in chatHistory.items() %}
+					<tr>
+					<td>{{key}}</td>
+					<td>{{value}}</td>
+				  </tr>
+				  {% endfor %}
+				  </table>
+				 </div>
+			</div>
+		{% endif %}
+	   </div>
+		
+	</body>
+		
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>MemeTimes.com</title>
+
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/MemeNews_ss.css') }}" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Alegreya|Alike|Aref+Ruqaa|Cinzel|Cinzel+Decorative|Cookie|Cormorant|El+Messiri|Forum|Gilda+Display|IM+Fell+Double+Pica|Julius+Sans+One|Norican|Noto+Serif+SC|Petit+Formal+Script|Rasa" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    </head>
+    
+    <body>
+		<div class="header">
+			<table style="height:50px; width:100%; border-bottom:1px solid grey; "> 
+				<tr class="info_today" style="background-color: white">
+					<th class="textleft textbottom" style="width: 45%">
+						{{ date }}
+					</th>
+					<th style="width: 10%">
+						<a class="logo" href="/">
+							<img src="{{ url_for('static',filename='images/logo.png') }}" alt="MemeNews Logo. Click to visit the homepage" height="50px" align="middle">
+						</a>
+					</th>
+					<th class="textright textbottom" style="width: 45%">
+						<a class="pop_up" href="Subscribe">
+							Subscribe
+						</a>
+					</th>
+				</tr>
+			</table>
+		</div>
+			
+		<div class="nav">
+			<table style="width:100%; background-color:white; border-top: 2px solid white; border-bottom: 3px double black"> 
+				<tr height='fixed'>
+					<th class="textcenter">
+						<a class="menu_bar hide sticky" href="/">
+							<img src="{{ url_for('static',filename='images/logo_simple.png') }}" height="16px">
+						</a>
+					</th>
+					<th class="textcenter"><a class="menu_bar" href="PastArticles">Past Articles</a></th>
+					<th class="textcenter"><a class="menu_bar" href="TheWorldInMemes">The World in Memes</a></th>
+					<th class="textcenter">
+						<button class="menu_bar dropbtn">Meme Analysis</button>
+							<a href="MemeAnalysis_Articles">
+								Articles</a>
+							<a  href="MemeAnalysis_Comments">
+								Comments</a>
+					</th>
+					<th class="textcenter"><a class="menu_bar" href="AboutUs">About Us</a></th>
+					<th class="textcenter"><a class="menu_bar" >Ask Reddit</a></th>
+				</tr>
+			</table>
+		</div>
+			
+		
+		<div class="jumbotron">
+		  <h1 class="display-4">About Meme Times</h1>
+		  <p class="lead">Meme Times is a multifunctional, one-stop platform where users can better engage with the most recent and curated news content.</p>
+		  <hr class="my-4">
+		  <p>1. For people who are short on time…</p>
+		  <p><i>Meme Times provides quick summaries of the trending news articles &#10004;</i></p>
+		  <br>
+		  <p>2. For people who want to have fun while reading…</p>
+		  <p><i>Meme Times generates memes based on the general readers’ sentiment on the article &#10004;</i></p>
+		  <br>
+		  <p>3. For people who want deep analytics on what they read…</p>
+		  <p><i>Meme Times provides graphical-interactive charts on word connotations used in the news articles &#10004;</i></p>
+		  <br>
+		  <p>4. For people who want to be aware of others’ opinions…</p>
+		  <p><i>Meme Times has a chatbot where you can find out what Reddit users collectively think about a subject &#10004;</i></p>
+		  <br>
+		  <a class="btn btn-primary btn-md" href="/Subscribe" role="button">Subscribe to Meme Times</a>
+		  <hr class="my-4">
+		</div>
+		<footer>
+			<table style="width: 100%; border-top: 3px double black;">
+				<tr> 
+					<td style="left: 0; text-align: left; width: 50%">
+						© 2018 The MemeTimes Company
+					</td>
+					<td style="text-align: right; width: 25%">
+						<a href="TermsOfService">
+						Terms of Service</a>
+					</td>
+					<td style="text-align: right; width: 15%">
+						<a href="SiteMap">
+						Site Map</a>
+					</td>
+					<td style="width:10%"></td>
+				</tr>
+			</table>
+			<br>
+		</footer>
+    </body>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+</html>
